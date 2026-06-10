@@ -6,6 +6,9 @@ option go_package = "/proto/gen;genpb";
 
 service Calculator {
     rpc Add (AddRequest) returns (AddResponse);
+    rpc Subtract (SubtractRequest) returns (SubtractResponse);
+    rpc Multiply (MultiplyRequest) returns (MultiplyResponse);
+    rpc Divide (DivideRequest) returns (DivideResponse);
 }
 
 message AddRequest {
@@ -15,4 +18,31 @@ message AddRequest {
 
 message AddResponse {
   int32 sum = 1;
+}
+
+message SubtractRequest {
+    int32 A = 1;
+    int32 B = 2;
+}
+
+message SubtractResponse {
+    int32 difference = 1;
+}
+
+message MultiplyRequest {
+    int32 A = 1;
+    int32 B = 2;
+}
+
+message MultiplyResponse {
+    int32 product = 1;
+}
+
+message DivideRequest {
+    int32 A = 1;
+    int32 B = 2;
+}
+
+message DivideResponse {
+    float quotient = 1;
 }
