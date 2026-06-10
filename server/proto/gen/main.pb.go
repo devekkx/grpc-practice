@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v7.35.1
-// source: main.proto
+// source: proto/main.proto
 
 package genpb
 
@@ -31,7 +31,7 @@ type AddRequest struct {
 
 func (x *AddRequest) Reset() {
 	*x = AddRequest{}
-	mi := &file_main_proto_msgTypes[0]
+	mi := &file_proto_main_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +43,7 @@ func (x *AddRequest) String() string {
 func (*AddRequest) ProtoMessage() {}
 
 func (x *AddRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_main_proto_msgTypes[0]
+	mi := &file_proto_main_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +56,7 @@ func (x *AddRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddRequest.ProtoReflect.Descriptor instead.
 func (*AddRequest) Descriptor() ([]byte, []int) {
-	return file_main_proto_rawDescGZIP(), []int{0}
+	return file_proto_main_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AddRequest) GetA() int32 {
@@ -82,7 +82,7 @@ type AddResponse struct {
 
 func (x *AddResponse) Reset() {
 	*x = AddResponse{}
-	mi := &file_main_proto_msgTypes[1]
+	mi := &file_proto_main_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -94,7 +94,7 @@ func (x *AddResponse) String() string {
 func (*AddResponse) ProtoMessage() {}
 
 func (x *AddResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_main_proto_msgTypes[1]
+	mi := &file_proto_main_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,7 +107,7 @@ func (x *AddResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddResponse.ProtoReflect.Descriptor instead.
 func (*AddResponse) Descriptor() ([]byte, []int) {
-	return file_main_proto_rawDescGZIP(), []int{1}
+	return file_proto_main_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AddResponse) GetSum() int32 {
@@ -117,70 +117,389 @@ func (x *AddResponse) GetSum() int32 {
 	return 0
 }
 
-var File_main_proto protoreflect.FileDescriptor
+type SubtractRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             int32                  `protobuf:"varint,1,opt,name=A,proto3" json:"A,omitempty"`
+	B             int32                  `protobuf:"varint,2,opt,name=B,proto3" json:"B,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
 
-const file_main_proto_rawDesc = "" +
+func (x *SubtractRequest) Reset() {
+	*x = SubtractRequest{}
+	mi := &file_proto_main_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubtractRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubtractRequest) ProtoMessage() {}
+
+func (x *SubtractRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_main_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubtractRequest.ProtoReflect.Descriptor instead.
+func (*SubtractRequest) Descriptor() ([]byte, []int) {
+	return file_proto_main_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *SubtractRequest) GetA() int32 {
+	if x != nil {
+		return x.A
+	}
+	return 0
+}
+
+func (x *SubtractRequest) GetB() int32 {
+	if x != nil {
+		return x.B
+	}
+	return 0
+}
+
+type SubtractResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Difference    int32                  `protobuf:"varint,1,opt,name=difference,proto3" json:"difference,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubtractResponse) Reset() {
+	*x = SubtractResponse{}
+	mi := &file_proto_main_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubtractResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubtractResponse) ProtoMessage() {}
+
+func (x *SubtractResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_main_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubtractResponse.ProtoReflect.Descriptor instead.
+func (*SubtractResponse) Descriptor() ([]byte, []int) {
+	return file_proto_main_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *SubtractResponse) GetDifference() int32 {
+	if x != nil {
+		return x.Difference
+	}
+	return 0
+}
+
+type MultiplyRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             int32                  `protobuf:"varint,1,opt,name=A,proto3" json:"A,omitempty"`
+	B             int32                  `protobuf:"varint,2,opt,name=B,proto3" json:"B,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MultiplyRequest) Reset() {
+	*x = MultiplyRequest{}
+	mi := &file_proto_main_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MultiplyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MultiplyRequest) ProtoMessage() {}
+
+func (x *MultiplyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_main_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MultiplyRequest.ProtoReflect.Descriptor instead.
+func (*MultiplyRequest) Descriptor() ([]byte, []int) {
+	return file_proto_main_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *MultiplyRequest) GetA() int32 {
+	if x != nil {
+		return x.A
+	}
+	return 0
+}
+
+func (x *MultiplyRequest) GetB() int32 {
+	if x != nil {
+		return x.B
+	}
+	return 0
+}
+
+type MultiplyResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Product       int32                  `protobuf:"varint,1,opt,name=product,proto3" json:"product,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MultiplyResponse) Reset() {
+	*x = MultiplyResponse{}
+	mi := &file_proto_main_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MultiplyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MultiplyResponse) ProtoMessage() {}
+
+func (x *MultiplyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_main_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MultiplyResponse.ProtoReflect.Descriptor instead.
+func (*MultiplyResponse) Descriptor() ([]byte, []int) {
+	return file_proto_main_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *MultiplyResponse) GetProduct() int32 {
+	if x != nil {
+		return x.Product
+	}
+	return 0
+}
+
+type DivideRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             int32                  `protobuf:"varint,1,opt,name=A,proto3" json:"A,omitempty"`
+	B             int32                  `protobuf:"varint,2,opt,name=B,proto3" json:"B,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DivideRequest) Reset() {
+	*x = DivideRequest{}
+	mi := &file_proto_main_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DivideRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DivideRequest) ProtoMessage() {}
+
+func (x *DivideRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_main_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DivideRequest.ProtoReflect.Descriptor instead.
+func (*DivideRequest) Descriptor() ([]byte, []int) {
+	return file_proto_main_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DivideRequest) GetA() int32 {
+	if x != nil {
+		return x.A
+	}
+	return 0
+}
+
+func (x *DivideRequest) GetB() int32 {
+	if x != nil {
+		return x.B
+	}
+	return 0
+}
+
+type DivideResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Quotient      float32                `protobuf:"fixed32,1,opt,name=quotient,proto3" json:"quotient,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DivideResponse) Reset() {
+	*x = DivideResponse{}
+	mi := &file_proto_main_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DivideResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DivideResponse) ProtoMessage() {}
+
+func (x *DivideResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_main_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DivideResponse.ProtoReflect.Descriptor instead.
+func (*DivideResponse) Descriptor() ([]byte, []int) {
+	return file_proto_main_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *DivideResponse) GetQuotient() float32 {
+	if x != nil {
+		return x.Quotient
+	}
+	return 0
+}
+
+var File_proto_main_proto protoreflect.FileDescriptor
+
+const file_proto_main_proto_rawDesc = "" +
 	"\n" +
-	"\n" +
-	"main.proto\x12\n" +
+	"\x10proto/main.proto\x12\n" +
 	"calculator\"(\n" +
 	"\n" +
 	"AddRequest\x12\f\n" +
 	"\x01A\x18\x01 \x01(\x05R\x01A\x12\f\n" +
 	"\x01B\x18\x02 \x01(\x05R\x01B\"\x1f\n" +
 	"\vAddResponse\x12\x10\n" +
-	"\x03sum\x18\x01 \x01(\x05R\x03sum2D\n" +
+	"\x03sum\x18\x01 \x01(\x05R\x03sum\"-\n" +
+	"\x0fSubtractRequest\x12\f\n" +
+	"\x01A\x18\x01 \x01(\x05R\x01A\x12\f\n" +
+	"\x01B\x18\x02 \x01(\x05R\x01B\"2\n" +
+	"\x10SubtractResponse\x12\x1e\n" +
+	"\n" +
+	"difference\x18\x01 \x01(\x05R\n" +
+	"difference\"-\n" +
+	"\x0fMultiplyRequest\x12\f\n" +
+	"\x01A\x18\x01 \x01(\x05R\x01A\x12\f\n" +
+	"\x01B\x18\x02 \x01(\x05R\x01B\",\n" +
+	"\x10MultiplyResponse\x12\x18\n" +
+	"\aproduct\x18\x01 \x01(\x05R\aproduct\"+\n" +
+	"\rDivideRequest\x12\f\n" +
+	"\x01A\x18\x01 \x01(\x05R\x01A\x12\f\n" +
+	"\x01B\x18\x02 \x01(\x05R\x01B\",\n" +
+	"\x0eDivideResponse\x12\x1a\n" +
+	"\bquotient\x18\x01 \x01(\x02R\bquotient2\x93\x02\n" +
 	"\n" +
 	"Calculator\x126\n" +
-	"\x03Add\x12\x16.calculator.AddRequest\x1a\x17.calculator.AddResponseB\x12Z\x10/proto/gen;genpbb\x06proto3"
+	"\x03Add\x12\x16.calculator.AddRequest\x1a\x17.calculator.AddResponse\x12E\n" +
+	"\bSubtract\x12\x1b.calculator.SubtractRequest\x1a\x1c.calculator.SubtractResponse\x12E\n" +
+	"\bMultiply\x12\x1b.calculator.MultiplyRequest\x1a\x1c.calculator.MultiplyResponse\x12?\n" +
+	"\x06Divide\x12\x19.calculator.DivideRequest\x1a\x1a.calculator.DivideResponseB\x12Z\x10/proto/gen;genpbb\x06proto3"
 
 var (
-	file_main_proto_rawDescOnce sync.Once
-	file_main_proto_rawDescData []byte
+	file_proto_main_proto_rawDescOnce sync.Once
+	file_proto_main_proto_rawDescData []byte
 )
 
-func file_main_proto_rawDescGZIP() []byte {
-	file_main_proto_rawDescOnce.Do(func() {
-		file_main_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_main_proto_rawDesc), len(file_main_proto_rawDesc)))
+func file_proto_main_proto_rawDescGZIP() []byte {
+	file_proto_main_proto_rawDescOnce.Do(func() {
+		file_proto_main_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_main_proto_rawDesc), len(file_proto_main_proto_rawDesc)))
 	})
-	return file_main_proto_rawDescData
+	return file_proto_main_proto_rawDescData
 }
 
-var file_main_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_main_proto_goTypes = []any{
-	(*AddRequest)(nil),  // 0: calculator.AddRequest
-	(*AddResponse)(nil), // 1: calculator.AddResponse
+var file_proto_main_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_proto_main_proto_goTypes = []any{
+	(*AddRequest)(nil),       // 0: calculator.AddRequest
+	(*AddResponse)(nil),      // 1: calculator.AddResponse
+	(*SubtractRequest)(nil),  // 2: calculator.SubtractRequest
+	(*SubtractResponse)(nil), // 3: calculator.SubtractResponse
+	(*MultiplyRequest)(nil),  // 4: calculator.MultiplyRequest
+	(*MultiplyResponse)(nil), // 5: calculator.MultiplyResponse
+	(*DivideRequest)(nil),    // 6: calculator.DivideRequest
+	(*DivideResponse)(nil),   // 7: calculator.DivideResponse
 }
-var file_main_proto_depIdxs = []int32{
+var file_proto_main_proto_depIdxs = []int32{
 	0, // 0: calculator.Calculator.Add:input_type -> calculator.AddRequest
-	1, // 1: calculator.Calculator.Add:output_type -> calculator.AddResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: calculator.Calculator.Subtract:input_type -> calculator.SubtractRequest
+	4, // 2: calculator.Calculator.Multiply:input_type -> calculator.MultiplyRequest
+	6, // 3: calculator.Calculator.Divide:input_type -> calculator.DivideRequest
+	1, // 4: calculator.Calculator.Add:output_type -> calculator.AddResponse
+	3, // 5: calculator.Calculator.Subtract:output_type -> calculator.SubtractResponse
+	5, // 6: calculator.Calculator.Multiply:output_type -> calculator.MultiplyResponse
+	7, // 7: calculator.Calculator.Divide:output_type -> calculator.DivideResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_main_proto_init() }
-func file_main_proto_init() {
-	if File_main_proto != nil {
+func init() { file_proto_main_proto_init() }
+func file_proto_main_proto_init() {
+	if File_proto_main_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_main_proto_rawDesc), len(file_main_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_main_proto_rawDesc), len(file_proto_main_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_main_proto_goTypes,
-		DependencyIndexes: file_main_proto_depIdxs,
-		MessageInfos:      file_main_proto_msgTypes,
+		GoTypes:           file_proto_main_proto_goTypes,
+		DependencyIndexes: file_proto_main_proto_depIdxs,
+		MessageInfos:      file_proto_main_proto_msgTypes,
 	}.Build()
-	File_main_proto = out.File
-	file_main_proto_goTypes = nil
-	file_main_proto_depIdxs = nil
+	File_proto_main_proto = out.File
+	file_proto_main_proto_goTypes = nil
+	file_proto_main_proto_depIdxs = nil
 }
